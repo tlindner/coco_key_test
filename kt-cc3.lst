@@ -1,0 +1,505 @@
+                      (       kt-cc3.asm):00001             PRAGMA autobranchlength
+                      (       kt-cc3.asm):00002             ORG $400
+0400                  (       kt-cc3.asm):00003         screen
+0400 01368383C3C3C368 (       kt-cc3.asm):00004             fcb $01,$36,$83,$83,$c3,$c3,$c3,$68,$69,$6b,$7f,$61,$62,$63,$64,$80,$80,$80,$80,$80,$80,$80,$80,$64,$7d,$45,$4e,$54,$45,$52,$80,$80
+     696B7F6162636480
+     8080808080808064
+     7D454E5445528080
+0420 01358383C3C3C36F (       kt-cc3.asm):00005                 fcb     $01,$35,$83,$83,$c3,$c3,$c3,$6f,$6e,$6d,$6c,$7b,$7a,$79,$78,$80,$80,$80,$80,$80,$80,$80,$80,$63,$7d,$43,$4c,$45,$41,$52,$80,$80
+     6E6D6C7B7A797880
+     8080808080808063
+     7D434C4541528080
+0440 01348383C3C3C377 (       kt-cc3.asm):00006                 fcb     $01,$34,$83,$83,$c3,$c3,$c3,$77,$76,$75,$74,$73,$72,$71,$70,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     7675747372717080
+     8080808080808080
+     8080808080808080
+0460 01338383C3C3C36A (       kt-cc3.asm):00007                 fcb     $01,$33,$83,$83,$c3,$c3,$c3,$6a,$7e,$5f,$7c,$5e,$5a,$59,$58,$c3,$c3,$4c,$42,$72,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     7E5F7C5E5A5958C3
+     C34C427280808080
+     8080808080808080
+0480 01328383C3C3C357 (       kt-cc3.asm):00008                 fcb     $01,$32,$83,$83,$c3,$c3,$c3,$57,$56,$55,$54,$53,$52,$51,$50,$c3,$c3,$52,$42,$72,$80,$80,$80,$43,$43,$73,$80,$49,$4e,$54,$80,$80
+     56555453525150C3
+     C352427280808043
+     437380494E548080
+04A0 01318383C3C3C34F (       kt-cc3.asm):00009                 fcb     $01,$31,$83,$83,$c3,$c3,$c3,$4f,$4e,$4d,$4c,$4b,$4a,$49,$48,$c3,$c3,$4c,$42,$71,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     4E4D4C4B4A4948C3
+     C34C427180808080
+     8080808080808080
+04C0 01308383C3C3C347 (       kt-cc3.asm):00010                 fcb     $01,$30,$83,$83,$c3,$c3,$c3,$47,$46,$45,$44,$43,$42,$41,$40,$c3,$c3,$52,$42,$71,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     46454443424140C3
+     C352427180808080
+     8080808080808080
+04E0 80808080808080C5 (       kt-cc3.asm):00011                 fcb     $80,$80,$80,$80,$80,$80,$80,$c5,$c5,$c5,$c5,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     C5C5C5C5C5C5C580
+     8080808080808080
+     8080808080808080
+0500 02378383C3C3C3C7 (       kt-cc3.asm):00012                 fcb     $02,$37,$83,$83,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$62,$7d,$42,$52,$45,$41,$4b,$80,$80
+     C5C5C5C5C5C5C580
+     8080808080808062
+     7D425245414B8080
+0520 02368383C3C3C3C3 (       kt-cc3.asm):00013                 fcb     $02,$36,$83,$83,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$61,$7d,$41,$4c,$54,$80,$80,$80,$80
+     C7C5C5C5C5C5C580
+     8080808080808061
+     7D414C5480808080
+0540 02358383C3C3C3C3 (       kt-cc3.asm):00014                 fcb     $02,$35,$83,$83,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$6a,$7d,$53,$50,$41,$43,$45,$80,$80
+     C3C7C5C5C5C5C580
+     808080808080806A
+     7D53504143458080
+0560 02348383C3C3C3C3 (       kt-cc3.asm):00015                 fcb     $02,$34,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$7c,$7d,$44,$4f,$57,$4e,$80,$80,$80
+     C3C3C7C5C5C5C580
+     808080808080807C
+     7D444F574E808080
+0580 02338383C3C3C3C3 (       kt-cc3.asm):00016                 fcb     $02,$33,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$68,$7d,$53,$48,$49,$46,$54,$80,$80
+     C3C3C3C7C5C5C580
+     8080808080808068
+     7D53484946548080
+05A0 02328383C3C3C3C3 (       kt-cc3.asm):00017                 fcb     $02,$32,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$69,$7d,$46,$72,$80,$80,$80,$80,$80
+     C3C3C3C3C7C5C580
+     8080808080808069
+     7D46728080808080
+05C0 02318383C3C3C3C3 (       kt-cc3.asm):00018                 fcb     $02,$31,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$6b,$7d,$46,$71,$80,$80,$80,$80,$80
+     C3C3C3C3C3C7C580
+     808080808080806B
+     7D46718080808080
+05E0 02308383C3C3C3C3 (       kt-cc3.asm):00019                 fcb     $02,$30,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$80,$80,$80,$80,$80,$80,$80,$80,$7f,$7d,$43,$54,$52,$4c,$80,$80,$80
+     C3C3C3C3C3C3C780
+     808080808080807F
+     7D4354524C808080
+                      (       kt-cc3.asm):00020          
+                      (       kt-cc3.asm):00021             org $6000
+6000                  (       kt-cc3.asm):00022         outb rmb 1
+6001                  (       kt-cc3.asm):00023         ina rmb 1
+6002 0000             (       kt-cc3.asm):00024         int_count fdb 0
+6004                  (       kt-cc3.asm):00025         ic_buffer rmb 10
+                      (       kt-cc3.asm):00026         
+     FEF7             (       kt-cc3.asm):00027         sr_irq equ $fef7
+     FEF4             (       kt-cc3.asm):00028         sr_firq equ $fef4
+     FEFD             (       kt-cc3.asm):00029         sr_nmi equ $fefd
+     FEF4             (       kt-cc3.asm):00030         use_sr equ sr_firq
+                      (       kt-cc3.asm):00031         
+600E                  (       kt-cc3.asm):00032         start
+                      (       kt-cc3.asm):00033         * setup keyboard interrupt
+600E 0F71             (       kt-cc3.asm):00034             clr $71 ; force cold start on reset
+6010 1A50             (       kt-cc3.asm):00035             orcc #$50 ; disable interrupts
+6012 8602             (       kt-cc3.asm):00036             lda #%00000010 ; choose keyboard firq
+6014 B7FF93           (       kt-cc3.asm):00037             sta $ff93
+6017 86CC             (       kt-cc3.asm):00038             lda #$cc ; enable firq
+6019 8A10             (       kt-cc3.asm):00039             ora #%00010000
+601B B7FF90           (       kt-cc3.asm):00040             sta $ff90
+601E 8E6153           (       kt-cc3.asm):00041             ldx #firq_interrupt-(use_sr+3)
+6021 BFFEF5           (       kt-cc3.asm):00042             stx use_sr+1
+6024 1CAF             (       kt-cc3.asm):00043             andcc #$af ; enable interrupts
+                      (       kt-cc3.asm):00044         
+6026                  (       kt-cc3.asm):00045         mainloop
+                      (       kt-cc3.asm):00046             ; reset interrupt
+6026 8600             (       kt-cc3.asm):00047             lda #$00
+6028 B7FF02           (       kt-cc3.asm):00048             sta $ff02
+                      (       kt-cc3.asm):00049             ; display interrupt count
+602B FC6002           (       kt-cc3.asm):00050             ldd int_count
+602E 8E6004           (       kt-cc3.asm):00051             ldx #ic_buffer
+6031 BD61E1           (       kt-cc3.asm):00052             jsr BN2DEC
+                      (       kt-cc3.asm):00053             ; write value to screen
+6034 8E6004           (       kt-cc3.asm):00054             ldx #ic_buffer
+6037 108E04B7         (       kt-cc3.asm):00055             ldy #1239-32
+603B E680             (       kt-cc3.asm):00056             ldb ,x+
+603D                  (       kt-cc3.asm):00057         display_loop
+603D 10270007         (       kt-cc3.asm):00058             beq display_done
+6041 A680             (       kt-cc3.asm):00059             lda ,x+
+6043 A7A0             (       kt-cc3.asm):00060             sta ,y+
+6045 5A               (       kt-cc3.asm):00061             decb
+6046 20F5             (       kt-cc3.asm):00062             bra display_loop
+6048                  (       kt-cc3.asm):00063         display_done
+6048 20DC             (       kt-cc3.asm):00064             bra mainloop
+                      (       kt-cc3.asm):00065         
+604A                  (       kt-cc3.asm):00066         firq_interrupt
+604A 3476             (       kt-cc3.asm):00067             pshs a,b,x,y,u
+604C 1A50             (       kt-cc3.asm):00068             orcc #$50 ; disable interrupts
+                      (       kt-cc3.asm):00069         
+604E                  (       kt-cc3.asm):00070         test_joy
+604E 86FF             (       kt-cc3.asm):00071             lda #$ff
+6050 B7FF02           (       kt-cc3.asm):00072             sta $ff02
+6053 12               (       kt-cc3.asm):00073             nop
+6054 B6FF00           (       kt-cc3.asm):00074             lda $ff00
+6057 8AF0             (       kt-cc3.asm):00075             ora #%11110000
+6059 B76001           (       kt-cc3.asm):00076             sta ina
+605C 81FF             (       kt-cc3.asm):00077             cmpa #$ff
+605E 10270029         (       kt-cc3.asm):00078             beq do_keyboard ; no joystick button, go see if any keys are down.
+                      (       kt-cc3.asm):00079         * clear side b traces
+6062 86FF             (       kt-cc3.asm):00080                 lda #$ff
+6064 8E6274           (       kt-cc3.asm):00081             ldx #pia0b_table
+6067 C608             (       kt-cc3.asm):00082             ldb #8
+6069 1700F7           (       kt-cc3.asm):00083             bsr update_traces
+                      (       kt-cc3.asm):00084         * draw joystick traces
+606C B66001           (       kt-cc3.asm):00085             lda ina
+606F 8E6248           (       kt-cc3.asm):00086             ldx #button_table
+6072 C604             (       kt-cc3.asm):00087             ldb #4
+6074 1700EC           (       kt-cc3.asm):00088             bsr update_traces
+6077 B66001           (       kt-cc3.asm):00089             lda ina
+607A 170089           (       kt-cc3.asm):00090             bsr update_button_text
+607D B66001           (       kt-cc3.asm):00091             lda ina
+6080 8E6258           (       kt-cc3.asm):00092             ldx #pia0a_table
+6083 C607             (       kt-cc3.asm):00093             ldb #7
+6085 1700DB           (       kt-cc3.asm):00094             bsr update_traces
+6088 16006B           (       kt-cc3.asm):00095                 bra done
+                      (       kt-cc3.asm):00096         
+608B                  (       kt-cc3.asm):00097         do_keyboard
+                      (       kt-cc3.asm):00098             ; clear Joy traces
+608B 86FF             (       kt-cc3.asm):00099             lda #$ff
+608D 8E6248           (       kt-cc3.asm):00100             ldx #button_table
+6090 C604             (       kt-cc3.asm):00101             ldb #4
+6092 1700CE           (       kt-cc3.asm):00102             bsr update_traces
+                      (       kt-cc3.asm):00103         
+6095 867F             (       kt-cc3.asm):00104             lda #%01111111
+6097 B76000           (       kt-cc3.asm):00105             sta outb
+609A                  (       kt-cc3.asm):00106         roll
+609A B66000           (       kt-cc3.asm):00107             lda outb
+609D B7FF02           (       kt-cc3.asm):00108             sta $ff02
+60A0 12               (       kt-cc3.asm):00109             nop
+60A1 B6FF00           (       kt-cc3.asm):00110             lda $ff00
+60A4 8A80             (       kt-cc3.asm):00111             ora #%10000000
+60A6 B76001           (       kt-cc3.asm):00112             sta ina
+60A9 81FF             (       kt-cc3.asm):00113             cmpa #$ff
+60AB 10260011         (       kt-cc3.asm):00114             bne draw_traces
+60AF B66000           (       kt-cc3.asm):00115             lda outb
+60B2 44               (       kt-cc3.asm):00116             lsra
+60B3 8A80             (       kt-cc3.asm):00117             ora #%10000000
+60B5 B76000           (       kt-cc3.asm):00118             sta outb
+60B8 81FF             (       kt-cc3.asm):00119             cmpa #$ff
+60BA 10270024         (       kt-cc3.asm):00120             beq clear_traces
+60BE 20DA             (       kt-cc3.asm):00121             bra roll
+60C0                  (       kt-cc3.asm):00122         draw_traces
+                      (       kt-cc3.asm):00123             ; draw side b
+60C0 B66000           (       kt-cc3.asm):00124             lda outb
+60C3 8E6274           (       kt-cc3.asm):00125             ldx #pia0b_table
+60C6 C608             (       kt-cc3.asm):00126             ldb #8
+60C8 170098           (       kt-cc3.asm):00127             bsr update_traces
+                      (       kt-cc3.asm):00128             ; draw side a
+60CB B66001           (       kt-cc3.asm):00129             lda ina
+60CE 8E6258           (       kt-cc3.asm):00130             ldx #pia0a_table
+60D1 C607             (       kt-cc3.asm):00131             ldb #7
+60D3 17008D           (       kt-cc3.asm):00132             bsr update_traces
+                      (       kt-cc3.asm):00133             ; handle matrix drawing
+60D6 B66001           (       kt-cc3.asm):00134             lda ina
+60D9 F66000           (       kt-cc3.asm):00135             ldb outb
+60DC 17004E           (       kt-cc3.asm):00136             bsr update_matrix
+60DF 160014           (       kt-cc3.asm):00137             bra done
+60E2                  (       kt-cc3.asm):00138         clear_traces
+                      (       kt-cc3.asm):00139             ; draw side b
+60E2 86FF             (       kt-cc3.asm):00140             lda #$ff
+60E4 8E6274           (       kt-cc3.asm):00141             ldx #pia0b_table
+60E7 C608             (       kt-cc3.asm):00142             ldb #8
+60E9 170077           (       kt-cc3.asm):00143             bsr update_traces
+                      (       kt-cc3.asm):00144             ; draw side a
+60EC 86FF             (       kt-cc3.asm):00145             lda #$ff
+60EE 8E6258           (       kt-cc3.asm):00146             ldx #pia0a_table
+60F1 C607             (       kt-cc3.asm):00147             ldb #7
+60F3 17006D           (       kt-cc3.asm):00148             bsr update_traces
+60F6                  (       kt-cc3.asm):00149         done
+60F6 7C6003           (       kt-cc3.asm):00150             inc int_count+1
+60F9 10260003         (       kt-cc3.asm):00151             bne skip
+60FD 7C6002           (       kt-cc3.asm):00152             inc int_count
+6100                  (       kt-cc3.asm):00153         skip
+6100 B6FF93           (       kt-cc3.asm):00154             lda $ff93
+6103 3576             (       kt-cc3.asm):00155             puls a,b,x,y,u
+6105 3B               (       kt-cc3.asm):00156             rti
+                      (       kt-cc3.asm):00157         
+                      (       kt-cc3.asm):00158         ; highlite button text on screen
+                      (       kt-cc3.asm):00159         ; Input: a = value
+                      (       kt-cc3.asm):00160         ; saved: nothing
+6106                  (       kt-cc3.asm):00161         update_button_text
+6106 8E04D1           (       kt-cc3.asm):00162             ldx #1233
+6109 3402             (       kt-cc3.asm):00163             pshs a
+610B 8604             (       kt-cc3.asm):00164             lda #4
+610D                  (       kt-cc3.asm):00165         @loop
+610D 64E4             (       kt-cc3.asm):00166             lsr ,s
+610F 10250012         (       kt-cc3.asm):00167             bcs @skip
+6113 E684             (       kt-cc3.asm):00168             ldb ,x
+6115 C4BF             (       kt-cc3.asm):00169             andb #%10111111
+6117 E784             (       kt-cc3.asm):00170             stb ,x
+6119 E601             (       kt-cc3.asm):00171             ldb 1,x
+611B C4BF             (       kt-cc3.asm):00172             andb #%10111111
+611D E701             (       kt-cc3.asm):00173             stb 1,x
+611F E602             (       kt-cc3.asm):00174             ldb 2,x
+6121 C4BF             (       kt-cc3.asm):00175             andb #%10111111
+6123 E702             (       kt-cc3.asm):00176             stb 2,x
+6125                  (       kt-cc3.asm):00177         @skip
+6125 3088E0           (       kt-cc3.asm):00178             leax -32,x
+6128 4A               (       kt-cc3.asm):00179             deca
+6129 26E2             (       kt-cc3.asm):00180             bne @loop
+612B 3582             (       kt-cc3.asm):00181             puls a,pc
+                      (       kt-cc3.asm):00182             
+                      (       kt-cc3.asm):00183         ; update invert on keyboard matrix
+612D                  (       kt-cc3.asm):00184         update_matrix
+612D 8E04CE           (       kt-cc3.asm):00185             ldx #1230
+6130 160002           (       kt-cc3.asm):00186             bra @shift
+6133                  (       kt-cc3.asm):00187         @loop
+6133 301F             (       kt-cc3.asm):00188             leax -1,x
+6135                  (       kt-cc3.asm):00189         @shift
+6135 54               (       kt-cc3.asm):00190             lsrb
+6136 10250003         (       kt-cc3.asm):00191             bcs @skip
+613A 170006           (       kt-cc3.asm):00192             bsr dim_characters
+613D                  (       kt-cc3.asm):00193         @skip
+613D 8C04C7           (       kt-cc3.asm):00194             cmpx #1223
+6140 26F1             (       kt-cc3.asm):00195             bne @loop
+6142 39               (       kt-cc3.asm):00196             rts
+                      (       kt-cc3.asm):00197         
+                      (       kt-cc3.asm):00198         ; dim character on screen
+                      (       kt-cc3.asm):00199         ; input: x = video address, a = binary value to show
+                      (       kt-cc3.asm):00200         ; registers saved: b, x
+6143                  (       kt-cc3.asm):00201         dim_characters
+6143 3416             (       kt-cc3.asm):00202             pshs a,b,x
+6145 3402             (       kt-cc3.asm):00203             pshs a
+6147 8607             (       kt-cc3.asm):00204             lda #7
+6149                  (       kt-cc3.asm):00205         @shift
+6149 64E4             (       kt-cc3.asm):00206             lsr ,s
+614B 10250006         (       kt-cc3.asm):00207             bcs @loop
+614F E684             (       kt-cc3.asm):00208             ldb ,x
+6151 C4BF             (       kt-cc3.asm):00209             andb #%10111111
+6153 E784             (       kt-cc3.asm):00210             stb ,x
+6155                  (       kt-cc3.asm):00211         @loop
+6155 3088E0           (       kt-cc3.asm):00212             leax -32,x
+6158 4A               (       kt-cc3.asm):00213             deca
+6159 10270002         (       kt-cc3.asm):00214             beq @done
+615D 20EA             (       kt-cc3.asm):00215             bra @shift
+615F                  (       kt-cc3.asm):00216         @done
+615F 3502             (       kt-cc3.asm):00217             puls a
+6161 3596             (       kt-cc3.asm):00218             puls a,b,x,pc
+                      (       kt-cc3.asm):00219             
+                      (       kt-cc3.asm):00220         ; update trace graphics
+                      (       kt-cc3.asm):00221         ; input: a = binary value to show, b = trace count, x = table
+                      (       kt-cc3.asm):00222         ; regesters saved: none
+6163                  (       kt-cc3.asm):00223         update_traces
+6163 3404             (       kt-cc3.asm):00224             pshs b
+6165 C6FF             (       kt-cc3.asm):00225             ldb #$ff
+6167                  (       kt-cc3.asm):00226         @again
+6167 5C               (       kt-cc3.asm):00227             incb
+6168 E1E4             (       kt-cc3.asm):00228             cmpb ,s
+616A 1027000F         (       kt-cc3.asm):00229             beq @done
+616E 44               (       kt-cc3.asm):00230             lsra
+616F 10250005         (       kt-cc3.asm):00231             bcs @next
+6173 170009           (       kt-cc3.asm):00232             bsr set_trace
+6176 20EF             (       kt-cc3.asm):00233             bra @again
+6178                  (       kt-cc3.asm):00234         @next
+6178 170035           (       kt-cc3.asm):00235             bsr reset_trace
+617B 20EA             (       kt-cc3.asm):00236             bra @again
+617D                  (       kt-cc3.asm):00237         @done
+617D 3584             (       kt-cc3.asm):00238             puls b,pc
+                      (       kt-cc3.asm):00239         
+                      (       kt-cc3.asm):00240             INCLUDE trace.asm
+                      (        trace.asm):00001         ; set/reset a trace
+                      (        trace.asm):00002         ; input: b = trace number, x = trace table
+                      (        trace.asm):00003         ; regesters saved: a, b, x
+617F                  (        trace.asm):00004         set_trace
+617F 3416             (        trace.asm):00005             pshs a,b,x
+6181 58               (        trace.asm):00006             aslb
+6182 58               (        trace.asm):00007             aslb
+6183 3A               (        trace.asm):00008             abx
+6184 10AE81           (        trace.asm):00009             ldy ,x++
+6187 E680             (        trace.asm):00010             ldb ,x+
+6189                  (        trace.asm):00011         @repeat1
+6189 5A               (        trace.asm):00012             decb
+618A 1027000C         (        trace.asm):00013             beq @next
+618E A6A4             (        trace.asm):00014             lda ,y
+6190 8A30             (        trace.asm):00015             ora  #%00110000
+6192 84BF             (        trace.asm):00016             anda #%10111111
+6194 A7A4             (        trace.asm):00017             sta ,y
+6196 3121             (        trace.asm):00018             leay 1,y
+6198 20EF             (        trace.asm):00019             bra @repeat1
+619A                  (        trace.asm):00020         @next
+619A E684             (        trace.asm):00021             ldb ,x
+619C                  (        trace.asm):00022         @repeat2
+619C 5A               (        trace.asm):00023             decb
+619D 1027000D         (        trace.asm):00024             beq @done
+61A1 A6A4             (        trace.asm):00025             lda ,y
+61A3 8A30             (        trace.asm):00026             ora  #%00110000
+61A5 84BF             (        trace.asm):00027             anda #%10111111
+61A7 A7A4             (        trace.asm):00028             sta ,y
+61A9 31A8E0           (        trace.asm):00029             leay -32,y
+61AC 20EE             (        trace.asm):00030             bra @repeat2
+61AE                  (        trace.asm):00031         @done
+61AE 3596             (        trace.asm):00032             puls a,b,x,pc
+                      (        trace.asm):00033         
+61B0                  (        trace.asm):00034         reset_trace
+61B0 3416             (        trace.asm):00035             pshs a,b,x
+61B2 58               (        trace.asm):00036             aslb
+61B3 58               (        trace.asm):00037             aslb
+61B4 3A               (        trace.asm):00038             abx
+61B5 10AE81           (        trace.asm):00039             ldy ,x++
+61B8 E680             (        trace.asm):00040             ldb ,x+
+61BA                  (        trace.asm):00041         @repeat1
+61BA 5A               (        trace.asm):00042             decb
+61BB 1027000C         (        trace.asm):00043             beq @next
+61BF A6A4             (        trace.asm):00044             lda ,y
+61C1 8A40             (        trace.asm):00045             ora  #%01000000
+61C3 84CF             (        trace.asm):00046             anda #%11001111
+61C5 A7A4             (        trace.asm):00047             sta ,y
+61C7 3121             (        trace.asm):00048             leay 1,y
+61C9 20EF             (        trace.asm):00049             bra @repeat1
+61CB                  (        trace.asm):00050         @next
+61CB E684             (        trace.asm):00051             ldb ,x
+61CD                  (        trace.asm):00052         @repeat2
+61CD 5A               (        trace.asm):00053             decb
+61CE 1027000D         (        trace.asm):00054             beq @done
+61D2 A6A4             (        trace.asm):00055             lda ,y
+61D4 8A40             (        trace.asm):00056             ora  #%01000000
+61D6 84CF             (        trace.asm):00057             anda #%11001111
+61D8 A7A4             (        trace.asm):00058             sta ,y
+61DA 31A8E0           (        trace.asm):00059             leay -32,y
+61DD 20EE             (        trace.asm):00060             bra @repeat2
+61DF                  (        trace.asm):00061         @done
+61DF 3596             (        trace.asm):00062             puls a,b,x,pc
+                      (       kt-cc3.asm):00241             INCLUDE 6809_BN2DEC.asm
+                      (  6809_BN2DEC.asm):00001         ;
+                      (  6809_BN2DEC.asm):00002         ;       Title:          Binary to-Decimal ASCII
+                      (  6809_BN2DEC.asm):00003         ;
+                      (  6809_BN2DEC.asm):00004         ;       Name:           BN2DEC
+                      (  6809_BN2DEC.asm):00005         ;
+                      (  6809_BN2DEC.asm):00006         ;       Purpose:        Converts a 16-bit signed binary number to ASCII data
+                      (  6809_BN2DEC.asm):00007         ;
+                      (  6809_BN2DEC.asm):00008         ;       Entry:          Register D = Value to convert 
+                      (  6809_BN2DEC.asm):00009         ;                       Register X = Output buffer address
+                      (  6809_BN2DEC.asm):00010         ;
+                      (  6809_BN2DEC.asm):00011         ;       Exit:           The first byte of the buffer is the length,
+                      (  6809_BN2DEC.asm):00012         ;                       followed by the characters
+                      (  6809_BN2DEC.asm):00013         ;
+                      (  6809_BN2DEC.asm):00014         ;       Registers Used: CC, D, X, Y
+                      (  6809_BN2DEC.asm):00015         ;
+                      (  6809_BN2DEC.asm):00016         ;       Time:           Approximately 1000 cycles
+                      (  6809_BN2DEC.asm):00017         ;
+                      (  6809_BN2DEC.asm):00018         ;       Size:           Program 99 bytes
+                      (  6809_BN2DEC.asm):00019         ;                       Data up to 5 bytes on stack
+                      (  6809_BN2DEC.asm):00020         ;
+                      (  6809_BN2DEC.asm):00021         ;       SAVE ORIGINAL DATA IN BUFFER
+                      (  6809_BN2DEC.asm):00022         ;       TAKE ABSOLUTE VALUE IF DATA NEGATIVE
+                      (  6809_BN2DEC.asm):00023         ;
+61E1                  (  6809_BN2DEC.asm):00024         BN2DEC:
+61E1 ED01             (  6809_BN2DEC.asm):00025                 STD     1,X                     ; SAVE DATA IN BUFFER
+61E3 102A0005         (  6809_BN2DEC.asm):00026                 BPL     CNVERT          ; BRANCH IF DATA POSITIVE
+61E7 CC0000           (  6809_BN2DEC.asm):00027                 LDD     #0                      ; ELSE TAKE ABSOLUTE VALUE
+61EA A301             (  6809_BN2DEC.asm):00028                 SUBD    1,X
+                      (  6809_BN2DEC.asm):00029         ;
+                      (  6809_BN2DEC.asm):00030         ; INITIALIZE STRING LENGTH TO ZERO
+                      (  6809_BN2DEC.asm):00031         ;
+61EC                  (  6809_BN2DEC.asm):00032         CNVERT:
+61EC 6F84             (  6809_BN2DEC.asm):00033                 CLR     ,X                      ; STRING LENGTH = 0
+                      (  6809_BN2DEC.asm):00034         ;
+                      (  6809_BN2DEC.asm):00035         ; DIVIDE BINARY DATA BY 10 BY
+                      (  6809_BN2DEC.asm):00036         ; SUBTRACTING POWERS OF TEN 
+                      (  6809_BN2DEC.asm):00037         ;
+61EE                  (  6809_BN2DEC.asm):00038         DIV10:
+61EE 108EFC18         (  6809_BN2DEC.asm):00039                 LDY     #-1000                  ; START QUOTIENT AT -1000
+                      (  6809_BN2DEC.asm):00040         ;
+                      (  6809_BN2DEC.asm):00041         ; FIND NUMBER 0F THOUSANDS IN QUOTIENT
+                      (  6809_BN2DEC.asm):00042         ;
+61F2                  (  6809_BN2DEC.asm):00043         THOUSD:
+61F2 31A903E8         (  6809_BN2DEC.asm):00044                 LEAY    1000,Y                  ; ADD 1000 TO QUOTIENT
+61F6 832710           (  6809_BN2DEC.asm):00045                 SUBD    #10000                  ; SUBTRACT 10000 FROM DIVIDEND
+61F9 24F7             (  6809_BN2DEC.asm):00046                 BCC     THOUSD                  ; BRANCH IF DIFFERENCE STILL POSITIVE 
+61FB C32710           (  6809_BN2DEC.asm):00047                 ADDD    #10000                  ; ELSE ADD BACK LAST 10000
+                      (  6809_BN2DEC.asm):00048         ;
+                      (  6809_BN2DEC.asm):00049         ; FIND NUMBER OF HUNDREDS IN QUOTIENT
+                      (  6809_BN2DEC.asm):00050         ;
+61FE 31A89C           (  6809_BN2DEC.asm):00051                 LEAY    -100,Y                  ; START NUMBER OF HUNDREDS AT -1
+6201                  (  6809_BN2DEC.asm):00052         HUNDD:
+6201 31A864           (  6809_BN2DEC.asm):00053                 LEAY    100,Y                   ; ADD 100 TO QUOTIENT
+6204 8303E8           (  6809_BN2DEC.asm):00054                 SUBD    #1000                   ; SUBTRACT 1000 FROM DIVIDEND
+6207 24F8             (  6809_BN2DEC.asm):00055                 BCC     HUNDD                   ; BRANCH IF DIFFERENCE STILL POSITIVE
+6209 C303E8           (  6809_BN2DEC.asm):00056                 ADDD    #1000                   ; ELSE ADD BACK LAST 1000
+                      (  6809_BN2DEC.asm):00057         ;
+                      (  6809_BN2DEC.asm):00058         ; FIND NUMBER OF TENS IN QUOTIENT
+                      (  6809_BN2DEC.asm):00059         ;
+620C 3136             (  6809_BN2DEC.asm):00060                 LEAY    -10,Y                   ; STARTNUMBER OF TENS AT -1
+620E                  (  6809_BN2DEC.asm):00061         TENSD:
+620E 312A             (  6809_BN2DEC.asm):00062                 LEAY    10,Y                    ; ADD 10 TO QUOTIENT
+6210 830064           (  6809_BN2DEC.asm):00063                 SUBD    #100                    ; SUBTRACT 100 FROM DIVIDEND
+6213 24F9             (  6809_BN2DEC.asm):00064                 BCC     TENSD                   ; BRANCH IF DIFFERENCE STILL POSITIVE
+6215 C30064           (  6809_BN2DEC.asm):00065                 ADDD    #100                    ; ELSE ADD BACK LAST 100
+                      (  6809_BN2DEC.asm):00066         ;
+                      (  6809_BN2DEC.asm):00067         ; FIND NUMBER OF ONES IN QUOTIENT
+                      (  6809_BN2DEC.asm):00068         ;
+6218 313F             (  6809_BN2DEC.asm):00069                 LEAY    -1,Y                    ; START NUMBER OF ONES AT -1
+621A                  (  6809_BN2DEC.asm):00070         ONESD:
+621A 3121             (  6809_BN2DEC.asm):00071                 LEAY    1,Y                     ; ADD 1 TO QUOTIENT
+621C 83000A           (  6809_BN2DEC.asm):00072                 SUBD    #10                     ; SUBTRACT 10 FROM DIVIDEND
+621F 24F9             (  6809_BN2DEC.asm):00073                 BCC     ONESD                   ; BRANCH IF DIFFERENCE STILL POSITIVE
+6221 C3000A           (  6809_BN2DEC.asm):00074                 ADDD    #10                     ; ELSE ADD BACK LAST 10
+6224 E7E2             (  6809_BN2DEC.asm):00075                 STB     ,-S                     ; SAVE REMAINDER IN STACK
+                      (  6809_BN2DEC.asm):00076                                                 ; THIS IS NEXT DIGIT, MOVING LEFT
+                      (  6809_BN2DEC.asm):00077                                                 ; LEAST SIGNIFICANT DIGIT GOES INTO STACK
+                      (  6809_BN2DEC.asm):00078                                                 ; FIRST
+6226 6C84             (  6809_BN2DEC.asm):00079                 INC     ,X                      ; ADD 1 TO LENGTH BYTE
+                      (  6809_BN2DEC.asm):00080         
+6228 1F20             (  6809_BN2DEC.asm):00081                 TFR     Y,D                     ; MAKE QUOTIENT INTO NEN DIVIDEND 
+622A 10830000         (  6809_BN2DEC.asm):00082                 CMPD    #0                      ; CHECK IF DIVIDEND ZERO
+622E 26BE             (  6809_BN2DEC.asm):00083                 BNE     DIV10                   ; BRANCH IF NOT DIVIDE BY 10 AGAIN
+                      (  6809_BN2DEC.asm):00084         ;
+                      (  6809_BN2DEC.asm):00085         ; CHECK IF ORIGINAL BINARY DATA WNAS NEGATIVE
+                      (  6809_BN2DEC.asm):00086         ; IF SO, PUT ASCII AT FRONT OF BUFFER
+                      (  6809_BN2DEC.asm):00087         ;
+6230 A680             (  6809_BN2DEC.asm):00088                 LDA     ,X+                     ; GET LENGTH BYTE (NOT INCLUDING SIGN)
+6232 E684             (  6809_BN2DEC.asm):00089                 LDB     ,X                      ; GET HIGH BYTE OF DATA
+6234 102A0006         (  6809_BN2DEC.asm):00090                 BPL     BUFLOAD                 ; BRANCH IF DATA POSITIVE
+6238 C62D             (  6809_BN2DEC.asm):00091                 LDB     #'-'                    ; OTHERWISE, GET ASCII MINUS SIGN
+623A E780             (  6809_BN2DEC.asm):00092                 STB     ,X+                     ; STORE MINUS SIGN IN BUFFER
+623C 6C1E             (  6809_BN2DEC.asm):00093                 INC     -2,X                    ; ADD 1 TO LENGTH BYTE FOR SIGN
+                      (  6809_BN2DEC.asm):00094         ;
+                      (  6809_BN2DEC.asm):00095         ; MOVE STRING OF DIGITS FROM STACK TO BUFFER 
+                      (  6809_BN2DEC.asm):00096         ; HOST SIGNIFICANT DIGIT IS AT TOP OF STACK
+                      (  6809_BN2DEC.asm):00097         ; CONVERT DIGITS TO ASCII BY ADDING ASCII 0
+                      (  6809_BN2DEC.asm):00098         ;
+623E                  (  6809_BN2DEC.asm):00099         BUFLOAD:
+623E E6E0             (  6809_BN2DEC.asm):00100                 LDB     ,S+                     ; GET NEXT DIGIT FROM STACK, MOVING RIGHT
+6240 CB30             (  6809_BN2DEC.asm):00101                 ADDB    #'0'                    ; CONVERT DIGIT TO ASCII
+6242 E780             (  6809_BN2DEC.asm):00102                 STB     ,X+                     ; SAVE DIGIT IN BUFFER
+6244 4A               (  6809_BN2DEC.asm):00103                 DECA                            ; DECREMENT BYTE COUNTER
+6245 26F7             (  6809_BN2DEC.asm):00104                 BNE     BUFLOAD                 ; LOOP IF MORE BYTES LEFT
+6247 39               (  6809_BN2DEC.asm):00105                 RTS
+                      (       kt-cc3.asm):00242             
+                      (       kt-cc3.asm):00243         ; Drawing tables: Start address, move right count, move up count
+6248                  (       kt-cc3.asm):00244         button_table
+6248 04CF             (       kt-cc3.asm):00245             fdb 1231
+624A 0301             (       kt-cc3.asm):00246             fcb 3,1
+624C 04AF             (       kt-cc3.asm):00247             fdb 1199
+624E 0301             (       kt-cc3.asm):00248             fcb 3,1
+6250 048F             (       kt-cc3.asm):00249             fdb 1167
+6252 0301             (       kt-cc3.asm):00250             fcb 3,1
+6254 046F             (       kt-cc3.asm):00251             fdb 1135
+6256 0301             (       kt-cc3.asm):00252             fcb 3,1
+                      (       kt-cc3.asm):00253             
+6258                  (       kt-cc3.asm):00254         pia0a_table
+6258 04C4             (       kt-cc3.asm):00255             fdb 1220
+625A 0401             (       kt-cc3.asm):00256             fcb 4,1
+625C 04A4             (       kt-cc3.asm):00257             fdb 1188
+625E 0401             (       kt-cc3.asm):00258             fcb 4,1
+6260 0484             (       kt-cc3.asm):00259             fdb 1156
+6262 0401             (       kt-cc3.asm):00260             fcb 4,1
+6264 0464             (       kt-cc3.asm):00261             fdb 1124
+6266 0401             (       kt-cc3.asm):00262             fcb 4,1
+6268 0444             (       kt-cc3.asm):00263             fdb 1092
+626A 0401             (       kt-cc3.asm):00264             fcb 4,1
+626C 0424             (       kt-cc3.asm):00265             fdb 1060
+626E 0401             (       kt-cc3.asm):00266             fcb 4,1
+6270 0404             (       kt-cc3.asm):00267             fdb 1028
+6272 0401             (       kt-cc3.asm):00268             fcb 4,1
+6274                  (       kt-cc3.asm):00269         pia0b_table
+6274 05E4             (       kt-cc3.asm):00270             fdb 1508
+6276 0B0A             (       kt-cc3.asm):00271             fcb 11,10
+6278 05C4             (       kt-cc3.asm):00272             fdb 1476
+627A 0A09             (       kt-cc3.asm):00273             fcb 10,9
+627C 05A4             (       kt-cc3.asm):00274             fdb 1444
+627E 0908             (       kt-cc3.asm):00275             fcb 9,8
+6280 0584             (       kt-cc3.asm):00276             fdb 1412
+6282 0807             (       kt-cc3.asm):00277             fcb 8,7
+6284 0564             (       kt-cc3.asm):00278             fdb 1380
+6286 0706             (       kt-cc3.asm):00279             fcb 7,6
+6288 0544             (       kt-cc3.asm):00280             fdb 1348
+628A 0605             (       kt-cc3.asm):00281             fcb 6,5
+628C 0524             (       kt-cc3.asm):00282             fdb 1316
+628E 0504             (       kt-cc3.asm):00283             fcb 5,4
+6290 0504             (       kt-cc3.asm):00284             fdb 1284
+6292 0403             (       kt-cc3.asm):00285             fcb 4,3
+                      (       kt-cc3.asm):00286         
+6294                  (       kt-cc3.asm):00287         matrix_table
+6294 04CE             (       kt-cc3.asm):00288             fdb 1230
+                      (       kt-cc3.asm):00289             
+                      (       kt-cc3.asm):00290             end start

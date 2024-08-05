@@ -1,0 +1,348 @@
+                      (         kt-f.asm):00001             PRAGMA autobranchlength
+                      (         kt-f.asm):00002             ORG $400
+0400                  (         kt-f.asm):00003         screen
+0400 01368383C3C3C368 (         kt-f.asm):00004                 fcb     $01,$36,$83,$83,$c3,$c3,$c3,$68,$69,$6b,$7f,$61,$62,$63,$64,$80,$80,$80,$80,$80,$80,$80,$80,$64,$7d,$45,$4e,$54,$45,$52,$80,$80
+     696B7F6162636480
+     8080808080808064
+     7D454E5445528080
+0420 01358383C3C3C36F (         kt-f.asm):00005                 fcb     $01,$35,$83,$83,$c3,$c3,$c3,$6f,$6e,$6d,$6c,$7b,$7a,$79,$78,$80,$80,$80,$80,$80,$80,$80,$80,$63,$7d,$43,$4c,$45,$41,$52,$80,$80
+     6E6D6C7B7A797880
+     8080808080808063
+     7D434C4541528080
+0440 01348383C3C3C377 (         kt-f.asm):00006                 fcb     $01,$34,$83,$83,$c3,$c3,$c3,$77,$76,$75,$74,$73,$72,$71,$70,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     7675747372717080
+     8080808080808080
+     8080808080808080
+0460 01338383C3C3C36A (         kt-f.asm):00007                 fcb     $01,$33,$83,$83,$c3,$c3,$c3,$6a,$7e,$5f,$7c,$5e,$5a,$59,$58,$c3,$c3,$4c,$42,$72,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     7E5F7C5E5A5958C3
+     C34C427280808080
+     8080808080808080
+0480 01328383C3C3C357 (         kt-f.asm):00008                 fcb     $01,$32,$83,$83,$c3,$c3,$c3,$57,$56,$55,$54,$53,$52,$51,$50,$c3,$c3,$52,$42,$72,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     56555453525150C3
+     C352427280808080
+     8080808080808080
+04A0 01318383C3C3C34F (         kt-f.asm):00009                 fcb     $01,$31,$83,$83,$c3,$c3,$c3,$4f,$4e,$4d,$4c,$4b,$4a,$49,$48,$c3,$c3,$4c,$42,$71,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     4E4D4C4B4A4948C3
+     C34C427180808080
+     8080808080808080
+04C0 01308383C3C3C347 (         kt-f.asm):00010                 fcb     $01,$30,$83,$83,$c3,$c3,$c3,$47,$46,$45,$44,$43,$42,$41,$40,$c3,$c3,$52,$42,$71,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     46454443424140C3
+     C352427180808080
+     8080808080808080
+04E0 80808080808080C5 (         kt-f.asm):00011                 fcb     $80,$80,$80,$80,$80,$80,$80,$c5,$c5,$c5,$c5,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     C5C5C5C5C5C5C580
+     8080808080808080
+     8080808080808080
+0500 02378383C3C3C3C7 (         kt-f.asm):00012                 fcb     $02,$37,$83,$83,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$62,$7d,$42,$52,$45,$41,$4b,$80,$80
+     C5C5C5C5C5C5C580
+     8080808080808062
+     7D425245414B8080
+0520 02368383C3C3C3C3 (         kt-f.asm):00013                 fcb     $02,$36,$83,$83,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$61,$7d,$41,$4c,$54,$80,$80,$80,$80
+     C7C5C5C5C5C5C580
+     8080808080808061
+     7D414C5480808080
+0540 02358383C3C3C3C3 (         kt-f.asm):00014                 fcb     $02,$35,$83,$83,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$6a,$7d,$53,$50,$41,$43,$45,$80,$80
+     C3C7C5C5C5C5C580
+     808080808080806A
+     7D53504143458080
+0560 02348383C3C3C3C3 (         kt-f.asm):00015                 fcb     $02,$34,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$7c,$7d,$44,$4f,$57,$4e,$80,$80,$80
+     C3C3C7C5C5C5C580
+     808080808080807C
+     7D444F574E808080
+0580 02338383C3C3C3C3 (         kt-f.asm):00016                 fcb     $02,$33,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$68,$7d,$53,$48,$49,$46,$54,$80,$80
+     C3C3C3C7C5C5C580
+     8080808080808068
+     7D53484946548080
+05A0 02328383C3C3C3C3 (         kt-f.asm):00017                 fcb     $02,$32,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$69,$7d,$46,$72,$80,$80,$80,$80,$80
+     C3C3C3C3C7C5C580
+     8080808080808069
+     7D46728080808080
+05C0 02318383C3C3C3C3 (         kt-f.asm):00018                 fcb     $02,$31,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$6b,$7d,$46,$71,$80,$80,$80,$80,$80
+     C3C3C3C3C3C7C580
+     808080808080806B
+     7D46718080808080
+05E0 02308383C3C3C3C3 (         kt-f.asm):00019                 fcb     $02,$30,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$80,$80,$80,$80,$80,$80,$80,$80,$7f,$7d,$43,$54,$52,$4c,$80,$80,$80
+     C3C3C3C3C3C3C780
+     808080808080807F
+     7D4354524C808080
+                      (         kt-f.asm):00020          
+                      (         kt-f.asm):00021             org $6000
+6000                  (         kt-f.asm):00022         outb rmb 1
+6001                  (         kt-f.asm):00023         ina rmb 1
+6002                  (         kt-f.asm):00024         input_count     rmb     1
+                      (         kt-f.asm):00025         
+6003                  (         kt-f.asm):00026         start
+                      (         kt-f.asm):00027         * setup
+6003 0F71             (         kt-f.asm):00028             clr $71 ; force cold start on reset
+                      (         kt-f.asm):00029         
+6005                  (         kt-f.asm):00030         mainloop
+6005 867F             (         kt-f.asm):00031             lda #%01111111
+6007 B76000           (         kt-f.asm):00032             sta outb
+                      (         kt-f.asm):00033             
+600A                  (         kt-f.asm):00034         subloop
+600A                  (         kt-f.asm):00035         output_rows
+600A 8610             (         kt-f.asm):00036             lda #16
+600C B76002           (         kt-f.asm):00037             sta input_count
+                      (         kt-f.asm):00038         
+                      (         kt-f.asm):00039         * test joystick buttons
+600F                  (         kt-f.asm):00040         test_joy
+600F 86FF             (         kt-f.asm):00041             lda #$ff
+6011 B7FF02           (         kt-f.asm):00042             sta $ff02
+6014 12               (         kt-f.asm):00043             nop
+6015 B6FF00           (         kt-f.asm):00044             lda $ff00
+6018 8AF0             (         kt-f.asm):00045             ora #%11110000
+601A 81FF             (         kt-f.asm):00046             cmpa #$ff
+601C 10270028         (         kt-f.asm):00047             beq input_cols ; no joystick button, go see if any keys are down.
+                      (         kt-f.asm):00048         * clear side b traces
+6020 86FF             (         kt-f.asm):00049                 lda #$ff
+6022 8E619B           (         kt-f.asm):00050             ldx #pia0b_table
+6025 C608             (         kt-f.asm):00051             ldb #8
+6027 1700C7           (         kt-f.asm):00052             bsr update_traces
+                      (         kt-f.asm):00053         * draw joystick traces
+602A B6FF00           (         kt-f.asm):00054             lda $ff00
+602D 3402             (         kt-f.asm):00055             pshs a
+602F 8E616F           (         kt-f.asm):00056             ldx #button_table
+6032 C604             (         kt-f.asm):00057             ldb #4
+6034 1700BA           (         kt-f.asm):00058             bsr update_traces
+6037 A6E4             (         kt-f.asm):00059             lda ,s
+6039 170058           (         kt-f.asm):00060             bsr update_button_text
+603C 3502             (         kt-f.asm):00061             puls a
+603E 8E617F           (         kt-f.asm):00062             ldx #pia0a_table
+6041 C607             (         kt-f.asm):00063             ldb #7
+6043 1700AB           (         kt-f.asm):00064             bsr update_traces
+6046 20C7             (         kt-f.asm):00065                 bra test_joy
+                      (         kt-f.asm):00066                 
+6048                  (         kt-f.asm):00067         input_cols
+6048 86FF             (         kt-f.asm):00068             lda #$ff
+604A 8E616F           (         kt-f.asm):00069             ldx #button_table
+604D C604             (         kt-f.asm):00070             ldb #4
+604F 17009F           (         kt-f.asm):00071             bsr update_traces
+                      (         kt-f.asm):00072         
+6052 B66000           (         kt-f.asm):00073             lda outb
+6055 B7FF02           (         kt-f.asm):00074             sta $ff02
+6058 B6FF00           (         kt-f.asm):00075             lda $ff00
+605B B76001           (         kt-f.asm):00076             sta ina
+                      (         kt-f.asm):00077         * draw side b
+605E B66000           (         kt-f.asm):00078             lda outb
+6061 8E619B           (         kt-f.asm):00079             ldx #pia0b_table
+6064 C608             (         kt-f.asm):00080             ldb #8
+6066 170088           (         kt-f.asm):00081             bsr update_traces
+                      (         kt-f.asm):00082         
+                      (         kt-f.asm):00083         * draw side a
+6069 B66001           (         kt-f.asm):00084             lda ina
+606C 8E617F           (         kt-f.asm):00085             ldx #pia0a_table
+606F C607             (         kt-f.asm):00086             ldb #7
+6071 17007D           (         kt-f.asm):00087             bsr update_traces
+                      (         kt-f.asm):00088             
+                      (         kt-f.asm):00089         * handle matrix drawing
+6074 B66001           (         kt-f.asm):00090             lda ina
+6077 F66000           (         kt-f.asm):00091             ldb outb
+607A 17003E           (         kt-f.asm):00092             bsr update_matrix
+                      (         kt-f.asm):00093             
+                      (         kt-f.asm):00094         * handle repeat    
+607D 7A6002           (         kt-f.asm):00095             dec input_count
+6080 268D             (         kt-f.asm):00096             bne test_joy
+                      (         kt-f.asm):00097         
+                      (         kt-f.asm):00098         * handle b side shift   
+6082 B66000           (         kt-f.asm):00099             lda outb
+6085 44               (         kt-f.asm):00100             lsra
+6086 8A80             (         kt-f.asm):00101             ora #%10000000
+6088 B76000           (         kt-f.asm):00102             sta outb
+608B 81FF             (         kt-f.asm):00103             cmpa #$ff
+608D 1027FF74         (         kt-f.asm):00104             beq mainloop
+6091 16FF76           (         kt-f.asm):00105             bra subloop
+                      (         kt-f.asm):00106            
+                      (         kt-f.asm):00107         ; highlite button taxt on screen
+                      (         kt-f.asm):00108         ; Input: a = value
+                      (         kt-f.asm):00109         ; saved: nothing
+6094                  (         kt-f.asm):00110         update_button_text
+6094 8E04D1           (         kt-f.asm):00111             ldx #1233
+6097 3402             (         kt-f.asm):00112             pshs a
+6099 8604             (         kt-f.asm):00113             lda #4
+609B                  (         kt-f.asm):00114         @loop
+609B 64E4             (         kt-f.asm):00115             lsr ,s
+609D 10250012         (         kt-f.asm):00116             bcs @skip
+60A1 E684             (         kt-f.asm):00117             ldb ,x
+60A3 C4BF             (         kt-f.asm):00118             andb #%10111111
+60A5 E784             (         kt-f.asm):00119             stb ,x
+60A7 E601             (         kt-f.asm):00120             ldb 1,x
+60A9 C4BF             (         kt-f.asm):00121             andb #%10111111
+60AB E701             (         kt-f.asm):00122             stb 1,x
+60AD E602             (         kt-f.asm):00123             ldb 2,x
+60AF C4BF             (         kt-f.asm):00124             andb #%10111111
+60B1 E702             (         kt-f.asm):00125             stb 2,x
+60B3                  (         kt-f.asm):00126         @skip
+60B3 3088E0           (         kt-f.asm):00127             leax -32,x
+60B6 4A               (         kt-f.asm):00128             deca
+60B7 26E2             (         kt-f.asm):00129             bne @loop
+60B9 3582             (         kt-f.asm):00130             puls a,pc
+                      (         kt-f.asm):00131             
+                      (         kt-f.asm):00132         ; update invert on keyboard matrix
+60BB                  (         kt-f.asm):00133         update_matrix
+60BB 8E04CE           (         kt-f.asm):00134             ldx #1230
+60BE 160002           (         kt-f.asm):00135             bra @shift
+60C1                  (         kt-f.asm):00136         @loop
+60C1 301F             (         kt-f.asm):00137             leax -1,x
+60C3                  (         kt-f.asm):00138         @shift
+60C3 54               (         kt-f.asm):00139             lsrb
+60C4 10250003         (         kt-f.asm):00140             bcs @skip
+60C8 170006           (         kt-f.asm):00141             bsr dim_characters
+60CB                  (         kt-f.asm):00142         @skip
+60CB 8C04C7           (         kt-f.asm):00143             cmpx #1223
+60CE 26F1             (         kt-f.asm):00144             bne @loop
+60D0 39               (         kt-f.asm):00145             rts
+                      (         kt-f.asm):00146         
+                      (         kt-f.asm):00147         ; dim character on screen
+                      (         kt-f.asm):00148         ; input: x = video address, a = binary value to show
+                      (         kt-f.asm):00149         ; registers saved: b, x
+60D1                  (         kt-f.asm):00150         dim_characters
+60D1 3416             (         kt-f.asm):00151             pshs a,b,x
+60D3 3402             (         kt-f.asm):00152             pshs a
+60D5 8607             (         kt-f.asm):00153             lda #7
+60D7                  (         kt-f.asm):00154         @shift
+60D7 64E4             (         kt-f.asm):00155             lsr ,s
+60D9 10250006         (         kt-f.asm):00156             bcs @loop
+60DD E684             (         kt-f.asm):00157             ldb ,x
+60DF C4BF             (         kt-f.asm):00158             andb #%10111111
+60E1 E784             (         kt-f.asm):00159             stb ,x
+60E3                  (         kt-f.asm):00160         @loop
+60E3 3088E0           (         kt-f.asm):00161             leax -32,x
+60E6 4A               (         kt-f.asm):00162             deca
+60E7 10270002         (         kt-f.asm):00163             beq @done
+60EB 20EA             (         kt-f.asm):00164             bra @shift
+60ED                  (         kt-f.asm):00165         @done
+60ED 3502             (         kt-f.asm):00166             puls a
+60EF 3596             (         kt-f.asm):00167             puls a,b,x,pc
+                      (         kt-f.asm):00168             
+                      (         kt-f.asm):00169         ; update trace graphics
+                      (         kt-f.asm):00170         ; input: a = binary value to show, b = trace count, x = table
+                      (         kt-f.asm):00171         ; regesters saved: none
+60F1                  (         kt-f.asm):00172         update_traces
+60F1 3404             (         kt-f.asm):00173             pshs b
+60F3 C6FF             (         kt-f.asm):00174             ldb #$ff
+60F5                  (         kt-f.asm):00175         @again
+60F5 5C               (         kt-f.asm):00176             incb
+60F6 E1E4             (         kt-f.asm):00177             cmpb ,s
+60F8 1027000F         (         kt-f.asm):00178             beq @done
+60FC 44               (         kt-f.asm):00179             lsra
+60FD 10250005         (         kt-f.asm):00180             bcs @next
+6101 170009           (         kt-f.asm):00181             bsr set_trace
+6104 20EF             (         kt-f.asm):00182             bra @again
+6106                  (         kt-f.asm):00183         @next
+6106 170035           (         kt-f.asm):00184             bsr reset_trace
+6109 20EA             (         kt-f.asm):00185             bra @again
+610B                  (         kt-f.asm):00186         @done
+610B 3584             (         kt-f.asm):00187             puls b,pc
+                      (         kt-f.asm):00188         
+                      (         kt-f.asm):00189             INCLUDE trace.asm
+                      (        trace.asm):00001         ; set/reset a trace
+                      (        trace.asm):00002         ; input: b = trace number, x = trace table
+                      (        trace.asm):00003         ; regesters saved: a, b, x
+610D                  (        trace.asm):00004         set_trace
+610D 3416             (        trace.asm):00005             pshs a,b,x
+610F 58               (        trace.asm):00006             aslb
+6110 58               (        trace.asm):00007             aslb
+6111 3A               (        trace.asm):00008             abx
+6112 10AE81           (        trace.asm):00009             ldy ,x++
+6115 E680             (        trace.asm):00010             ldb ,x+
+6117                  (        trace.asm):00011         @repeat1
+6117 5A               (        trace.asm):00012             decb
+6118 1027000C         (        trace.asm):00013             beq @next
+611C A6A4             (        trace.asm):00014             lda ,y
+611E 8A30             (        trace.asm):00015             ora  #%00110000
+6120 84BF             (        trace.asm):00016             anda #%10111111
+6122 A7A4             (        trace.asm):00017             sta ,y
+6124 3121             (        trace.asm):00018             leay 1,y
+6126 20EF             (        trace.asm):00019             bra @repeat1
+6128                  (        trace.asm):00020         @next
+6128 E684             (        trace.asm):00021             ldb ,x
+612A                  (        trace.asm):00022         @repeat2
+612A 5A               (        trace.asm):00023             decb
+612B 1027000D         (        trace.asm):00024             beq @done
+612F A6A4             (        trace.asm):00025             lda ,y
+6131 8A30             (        trace.asm):00026             ora  #%00110000
+6133 84BF             (        trace.asm):00027             anda #%10111111
+6135 A7A4             (        trace.asm):00028             sta ,y
+6137 31A8E0           (        trace.asm):00029             leay -32,y
+613A 20EE             (        trace.asm):00030             bra @repeat2
+613C                  (        trace.asm):00031         @done
+613C 3596             (        trace.asm):00032             puls a,b,x,pc
+                      (        trace.asm):00033         
+613E                  (        trace.asm):00034         reset_trace
+613E 3416             (        trace.asm):00035             pshs a,b,x
+6140 58               (        trace.asm):00036             aslb
+6141 58               (        trace.asm):00037             aslb
+6142 3A               (        trace.asm):00038             abx
+6143 10AE81           (        trace.asm):00039             ldy ,x++
+6146 E680             (        trace.asm):00040             ldb ,x+
+6148                  (        trace.asm):00041         @repeat1
+6148 5A               (        trace.asm):00042             decb
+6149 1027000C         (        trace.asm):00043             beq @next
+614D A6A4             (        trace.asm):00044             lda ,y
+614F 8A40             (        trace.asm):00045             ora  #%01000000
+6151 84CF             (        trace.asm):00046             anda #%11001111
+6153 A7A4             (        trace.asm):00047             sta ,y
+6155 3121             (        trace.asm):00048             leay 1,y
+6157 20EF             (        trace.asm):00049             bra @repeat1
+6159                  (        trace.asm):00050         @next
+6159 E684             (        trace.asm):00051             ldb ,x
+615B                  (        trace.asm):00052         @repeat2
+615B 5A               (        trace.asm):00053             decb
+615C 1027000D         (        trace.asm):00054             beq @done
+6160 A6A4             (        trace.asm):00055             lda ,y
+6162 8A40             (        trace.asm):00056             ora  #%01000000
+6164 84CF             (        trace.asm):00057             anda #%11001111
+6166 A7A4             (        trace.asm):00058             sta ,y
+6168 31A8E0           (        trace.asm):00059             leay -32,y
+616B 20EE             (        trace.asm):00060             bra @repeat2
+616D                  (        trace.asm):00061         @done
+616D 3596             (        trace.asm):00062             puls a,b,x,pc
+                      (         kt-f.asm):00190             
+                      (         kt-f.asm):00191         ; Drawing tables: Start address, move right count, move up count
+616F                  (         kt-f.asm):00192         button_table
+616F 04CF             (         kt-f.asm):00193             fdb 1231
+6171 0301             (         kt-f.asm):00194             fcb 3,1
+6173 04AF             (         kt-f.asm):00195             fdb 1199
+6175 0301             (         kt-f.asm):00196             fcb 3,1
+6177 048F             (         kt-f.asm):00197             fdb 1167
+6179 0301             (         kt-f.asm):00198             fcb 3,1
+617B 046F             (         kt-f.asm):00199             fdb 1135
+617D 0301             (         kt-f.asm):00200             fcb 3,1
+                      (         kt-f.asm):00201             
+617F                  (         kt-f.asm):00202         pia0a_table
+617F 04C4             (         kt-f.asm):00203             fdb 1220
+6181 0401             (         kt-f.asm):00204             fcb 4,1
+6183 04A4             (         kt-f.asm):00205             fdb 1188
+6185 0401             (         kt-f.asm):00206             fcb 4,1
+6187 0484             (         kt-f.asm):00207             fdb 1156
+6189 0401             (         kt-f.asm):00208             fcb 4,1
+618B 0464             (         kt-f.asm):00209             fdb 1124
+618D 0401             (         kt-f.asm):00210             fcb 4,1
+618F 0444             (         kt-f.asm):00211             fdb 1092
+6191 0401             (         kt-f.asm):00212             fcb 4,1
+6193 0424             (         kt-f.asm):00213             fdb 1060
+6195 0401             (         kt-f.asm):00214             fcb 4,1
+6197 0404             (         kt-f.asm):00215             fdb 1028
+6199 0401             (         kt-f.asm):00216             fcb 4,1
+619B                  (         kt-f.asm):00217         pia0b_table
+619B 05E4             (         kt-f.asm):00218             fdb 1508
+619D 0B0A             (         kt-f.asm):00219             fcb 11,10
+619F 05C4             (         kt-f.asm):00220             fdb 1476
+61A1 0A09             (         kt-f.asm):00221             fcb 10,9
+61A3 05A4             (         kt-f.asm):00222             fdb 1444
+61A5 0908             (         kt-f.asm):00223             fcb 9,8
+61A7 0584             (         kt-f.asm):00224             fdb 1412
+61A9 0807             (         kt-f.asm):00225             fcb 8,7
+61AB 0564             (         kt-f.asm):00226             fdb 1380
+61AD 0706             (         kt-f.asm):00227             fcb 7,6
+61AF 0544             (         kt-f.asm):00228             fdb 1348
+61B1 0605             (         kt-f.asm):00229             fcb 6,5
+61B3 0524             (         kt-f.asm):00230             fdb 1316
+61B5 0504             (         kt-f.asm):00231             fcb 5,4
+61B7 0504             (         kt-f.asm):00232             fdb 1284
+61B9 0403             (         kt-f.asm):00233             fcb 4,3
+                      (         kt-f.asm):00234         
+61BB                  (         kt-f.asm):00235         matrix_table
+61BB 04CE             (         kt-f.asm):00236             fdb 1230
+                      (         kt-f.asm):00237             
+                      (         kt-f.asm):00238             end start
