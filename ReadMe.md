@@ -2,7 +2,7 @@ Color Computer Keyboard Test
 
 ![CoCo Key Test](https://github.com/user-attachments/assets/7cf4db0f-436a-4ae5-9909-a96adf1bd098)
 
-This is three programs that run on your color coputer to test the keyboard.
+This is three programs that run on your color computer to test the keyboard.
 
 From the provided disk image, type `RUN KT` to run the program chooser.
 
