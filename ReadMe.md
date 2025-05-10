@@ -4,11 +4,11 @@ Color Computer Keyboard Test
 
 This is three programs that run on your color computer to test the keyboard.
 
-From the provided disk image, type `RUN KT` to run the program chooser.
+From the provided disk image, type `RUN "KT` to run the program chooser.
 
 ## Forward
 
-This program rolls output bits thru the B port of PIA 0 looking for pressed key by reading the A port and looking for low bits. If a key is detected it's symbol is reversed. Joystick buttons are also ckecked.
+This program rolls output bits thru the B port of PIA 0 looking for a pressed key by reading the A port and looking for low bits. If a key is detected it's symbol is reversed. Joystick buttons are also ckecked.
 
 ## Backward
 
