@@ -1,0 +1,358 @@
+                      (     kt-f-rom.asm):00001             PRAGMA autobranchlength
+                      (     kt-f-rom.asm):00002          
+                      (     kt-f-rom.asm):00003             org $6000
+6000                  (     kt-f-rom.asm):00004         outb rmb 1
+6001                  (     kt-f-rom.asm):00005         ina rmb 1
+6002                  (     kt-f-rom.asm):00006         input_count     rmb     1
+                      (     kt-f-rom.asm):00007         
+                      (     kt-f-rom.asm):00008             org $c000
+C000                  (     kt-f-rom.asm):00009         start
+                      (     kt-f-rom.asm):00010         * setup
+C000 0F71             (     kt-f-rom.asm):00011             clr $71 ; force cold start on reset
+                      (     kt-f-rom.asm):00012         
+                      (     kt-f-rom.asm):00013         * copy screen data from screen to $400
+C002 8E0400           (     kt-f-rom.asm):00014                 ldx #$400
+C005 108EC1CA         (     kt-f-rom.asm):00015                 ldy #screen
+C009                  (     kt-f-rom.asm):00016         screen_loop
+C009 ECA1             (     kt-f-rom.asm):00017                 ldd ,y++
+C00B ED81             (     kt-f-rom.asm):00018                 std ,x++
+C00D 8C0600           (     kt-f-rom.asm):00019                 cmpx #$600
+C010 26F7             (     kt-f-rom.asm):00020                 bne screen_loop
+                      (     kt-f-rom.asm):00021                 
+C012                  (     kt-f-rom.asm):00022         mainloop
+C012 867F             (     kt-f-rom.asm):00023             lda #%01111111
+C014 B76000           (     kt-f-rom.asm):00024             sta outb
+                      (     kt-f-rom.asm):00025             
+C017                  (     kt-f-rom.asm):00026         subloop
+C017                  (     kt-f-rom.asm):00027         output_rows
+C017 8610             (     kt-f-rom.asm):00028             lda #16
+C019 B76002           (     kt-f-rom.asm):00029             sta input_count
+                      (     kt-f-rom.asm):00030         
+                      (     kt-f-rom.asm):00031         * test joystick buttons
+C01C                  (     kt-f-rom.asm):00032         test_joy
+C01C 86FF             (     kt-f-rom.asm):00033             lda #$ff
+C01E B7FF02           (     kt-f-rom.asm):00034             sta $ff02
+C021 12               (     kt-f-rom.asm):00035             nop
+C022 B6FF00           (     kt-f-rom.asm):00036             lda $ff00
+C025 8AF0             (     kt-f-rom.asm):00037             ora #%11110000
+C027 81FF             (     kt-f-rom.asm):00038             cmpa #$ff
+C029 10270028         (     kt-f-rom.asm):00039             beq input_cols ; no joystick button, go see if any keys are down.
+                      (     kt-f-rom.asm):00040         * clear side b traces
+C02D 86FF             (     kt-f-rom.asm):00041                 lda #$ff
+C02F 8EC1A8           (     kt-f-rom.asm):00042             ldx #pia0b_table
+C032 C608             (     kt-f-rom.asm):00043             ldb #8
+C034 1700C7           (     kt-f-rom.asm):00044             bsr update_traces
+                      (     kt-f-rom.asm):00045         * draw joystick traces
+C037 B6FF00           (     kt-f-rom.asm):00046             lda $ff00
+C03A 3402             (     kt-f-rom.asm):00047             pshs a
+C03C 8EC17C           (     kt-f-rom.asm):00048             ldx #button_table
+C03F C604             (     kt-f-rom.asm):00049             ldb #4
+C041 1700BA           (     kt-f-rom.asm):00050             bsr update_traces
+C044 A6E4             (     kt-f-rom.asm):00051             lda ,s
+C046 170058           (     kt-f-rom.asm):00052             bsr update_button_text
+C049 3502             (     kt-f-rom.asm):00053             puls a
+C04B 8EC18C           (     kt-f-rom.asm):00054             ldx #pia0a_table
+C04E C607             (     kt-f-rom.asm):00055             ldb #7
+C050 1700AB           (     kt-f-rom.asm):00056             bsr update_traces
+C053 20C7             (     kt-f-rom.asm):00057                 bra test_joy
+                      (     kt-f-rom.asm):00058                 
+C055                  (     kt-f-rom.asm):00059         input_cols
+C055 86FF             (     kt-f-rom.asm):00060             lda #$ff
+C057 8EC17C           (     kt-f-rom.asm):00061             ldx #button_table
+C05A C604             (     kt-f-rom.asm):00062             ldb #4
+C05C 17009F           (     kt-f-rom.asm):00063             bsr update_traces
+                      (     kt-f-rom.asm):00064         
+C05F B66000           (     kt-f-rom.asm):00065             lda outb
+C062 B7FF02           (     kt-f-rom.asm):00066             sta $ff02
+C065 B6FF00           (     kt-f-rom.asm):00067             lda $ff00
+C068 B76001           (     kt-f-rom.asm):00068             sta ina
+                      (     kt-f-rom.asm):00069         * draw side b
+C06B B66000           (     kt-f-rom.asm):00070             lda outb
+C06E 8EC1A8           (     kt-f-rom.asm):00071             ldx #pia0b_table
+C071 C608             (     kt-f-rom.asm):00072             ldb #8
+C073 170088           (     kt-f-rom.asm):00073             bsr update_traces
+                      (     kt-f-rom.asm):00074         
+                      (     kt-f-rom.asm):00075         * draw side a
+C076 B66001           (     kt-f-rom.asm):00076             lda ina
+C079 8EC18C           (     kt-f-rom.asm):00077             ldx #pia0a_table
+C07C C607             (     kt-f-rom.asm):00078             ldb #7
+C07E 17007D           (     kt-f-rom.asm):00079             bsr update_traces
+                      (     kt-f-rom.asm):00080             
+                      (     kt-f-rom.asm):00081         * handle matrix drawing
+C081 B66001           (     kt-f-rom.asm):00082             lda ina
+C084 F66000           (     kt-f-rom.asm):00083             ldb outb
+C087 17003E           (     kt-f-rom.asm):00084             bsr update_matrix
+                      (     kt-f-rom.asm):00085             
+                      (     kt-f-rom.asm):00086         * handle repeat    
+C08A 7A6002           (     kt-f-rom.asm):00087             dec input_count
+C08D 268D             (     kt-f-rom.asm):00088             bne test_joy
+                      (     kt-f-rom.asm):00089         
+                      (     kt-f-rom.asm):00090         * handle b side shift   
+C08F B66000           (     kt-f-rom.asm):00091             lda outb
+C092 44               (     kt-f-rom.asm):00092             lsra
+C093 8A80             (     kt-f-rom.asm):00093             ora #%10000000
+C095 B76000           (     kt-f-rom.asm):00094             sta outb
+C098 81FF             (     kt-f-rom.asm):00095             cmpa #$ff
+C09A 1027FF74         (     kt-f-rom.asm):00096             beq mainloop
+C09E 16FF76           (     kt-f-rom.asm):00097             bra subloop
+                      (     kt-f-rom.asm):00098            
+                      (     kt-f-rom.asm):00099         ; highlite button taxt on screen
+                      (     kt-f-rom.asm):00100         ; Input: a = value
+                      (     kt-f-rom.asm):00101         ; saved: nothing
+C0A1                  (     kt-f-rom.asm):00102         update_button_text
+C0A1 8E04D1           (     kt-f-rom.asm):00103             ldx #1233
+C0A4 3402             (     kt-f-rom.asm):00104             pshs a
+C0A6 8604             (     kt-f-rom.asm):00105             lda #4
+C0A8                  (     kt-f-rom.asm):00106         @loop
+C0A8 64E4             (     kt-f-rom.asm):00107             lsr ,s
+C0AA 10250012         (     kt-f-rom.asm):00108             bcs @skip
+C0AE E684             (     kt-f-rom.asm):00109             ldb ,x
+C0B0 C4BF             (     kt-f-rom.asm):00110             andb #%10111111
+C0B2 E784             (     kt-f-rom.asm):00111             stb ,x
+C0B4 E601             (     kt-f-rom.asm):00112             ldb 1,x
+C0B6 C4BF             (     kt-f-rom.asm):00113             andb #%10111111
+C0B8 E701             (     kt-f-rom.asm):00114             stb 1,x
+C0BA E602             (     kt-f-rom.asm):00115             ldb 2,x
+C0BC C4BF             (     kt-f-rom.asm):00116             andb #%10111111
+C0BE E702             (     kt-f-rom.asm):00117             stb 2,x
+C0C0                  (     kt-f-rom.asm):00118         @skip
+C0C0 3088E0           (     kt-f-rom.asm):00119             leax -32,x
+C0C3 4A               (     kt-f-rom.asm):00120             deca
+C0C4 26E2             (     kt-f-rom.asm):00121             bne @loop
+C0C6 3582             (     kt-f-rom.asm):00122             puls a,pc
+                      (     kt-f-rom.asm):00123             
+                      (     kt-f-rom.asm):00124         ; update invert on keyboard matrix
+C0C8                  (     kt-f-rom.asm):00125         update_matrix
+C0C8 8E04CE           (     kt-f-rom.asm):00126             ldx #1230
+C0CB 160002           (     kt-f-rom.asm):00127             bra @shift
+C0CE                  (     kt-f-rom.asm):00128         @loop
+C0CE 301F             (     kt-f-rom.asm):00129             leax -1,x
+C0D0                  (     kt-f-rom.asm):00130         @shift
+C0D0 54               (     kt-f-rom.asm):00131             lsrb
+C0D1 10250003         (     kt-f-rom.asm):00132             bcs @skip
+C0D5 170006           (     kt-f-rom.asm):00133             bsr dim_characters
+C0D8                  (     kt-f-rom.asm):00134         @skip
+C0D8 8C04C7           (     kt-f-rom.asm):00135             cmpx #1223
+C0DB 26F1             (     kt-f-rom.asm):00136             bne @loop
+C0DD 39               (     kt-f-rom.asm):00137             rts
+                      (     kt-f-rom.asm):00138         
+                      (     kt-f-rom.asm):00139         ; dim character on screen
+                      (     kt-f-rom.asm):00140         ; input: x = video address, a = binary value to show
+                      (     kt-f-rom.asm):00141         ; registers saved: b, x
+C0DE                  (     kt-f-rom.asm):00142         dim_characters
+C0DE 3416             (     kt-f-rom.asm):00143             pshs a,b,x
+C0E0 3402             (     kt-f-rom.asm):00144             pshs a
+C0E2 8607             (     kt-f-rom.asm):00145             lda #7
+C0E4                  (     kt-f-rom.asm):00146         @shift
+C0E4 64E4             (     kt-f-rom.asm):00147             lsr ,s
+C0E6 10250006         (     kt-f-rom.asm):00148             bcs @loop
+C0EA E684             (     kt-f-rom.asm):00149             ldb ,x
+C0EC C4BF             (     kt-f-rom.asm):00150             andb #%10111111
+C0EE E784             (     kt-f-rom.asm):00151             stb ,x
+C0F0                  (     kt-f-rom.asm):00152         @loop
+C0F0 3088E0           (     kt-f-rom.asm):00153             leax -32,x
+C0F3 4A               (     kt-f-rom.asm):00154             deca
+C0F4 10270002         (     kt-f-rom.asm):00155             beq @done
+C0F8 20EA             (     kt-f-rom.asm):00156             bra @shift
+C0FA                  (     kt-f-rom.asm):00157         @done
+C0FA 3502             (     kt-f-rom.asm):00158             puls a
+C0FC 3596             (     kt-f-rom.asm):00159             puls a,b,x,pc
+                      (     kt-f-rom.asm):00160             
+                      (     kt-f-rom.asm):00161         ; update trace graphics
+                      (     kt-f-rom.asm):00162         ; input: a = binary value to show, b = trace count, x = table
+                      (     kt-f-rom.asm):00163         ; regesters saved: none
+C0FE                  (     kt-f-rom.asm):00164         update_traces
+C0FE 3404             (     kt-f-rom.asm):00165             pshs b
+C100 C6FF             (     kt-f-rom.asm):00166             ldb #$ff
+C102                  (     kt-f-rom.asm):00167         @again
+C102 5C               (     kt-f-rom.asm):00168             incb
+C103 E1E4             (     kt-f-rom.asm):00169             cmpb ,s
+C105 1027000F         (     kt-f-rom.asm):00170             beq @done
+C109 44               (     kt-f-rom.asm):00171             lsra
+C10A 10250005         (     kt-f-rom.asm):00172             bcs @next
+C10E 170009           (     kt-f-rom.asm):00173             bsr set_trace
+C111 20EF             (     kt-f-rom.asm):00174             bra @again
+C113                  (     kt-f-rom.asm):00175         @next
+C113 170035           (     kt-f-rom.asm):00176             bsr reset_trace
+C116 20EA             (     kt-f-rom.asm):00177             bra @again
+C118                  (     kt-f-rom.asm):00178         @done
+C118 3584             (     kt-f-rom.asm):00179             puls b,pc
+                      (     kt-f-rom.asm):00180         
+                      (     kt-f-rom.asm):00181             INCLUDE trace.asm
+                      (        trace.asm):00001         ; set/reset a trace
+                      (        trace.asm):00002         ; input: b = trace number, x = trace table
+                      (        trace.asm):00003         ; regesters saved: a, b, x
+C11A                  (        trace.asm):00004         set_trace
+C11A 3416             (        trace.asm):00005             pshs a,b,x
+C11C 58               (        trace.asm):00006             aslb
+C11D 58               (        trace.asm):00007             aslb
+C11E 3A               (        trace.asm):00008             abx
+C11F 10AE81           (        trace.asm):00009             ldy ,x++
+C122 E680             (        trace.asm):00010             ldb ,x+
+C124                  (        trace.asm):00011         @repeat1
+C124 5A               (        trace.asm):00012             decb
+C125 1027000C         (        trace.asm):00013             beq @next
+C129 A6A4             (        trace.asm):00014             lda ,y
+C12B 8A30             (        trace.asm):00015             ora  #%00110000
+C12D 84BF             (        trace.asm):00016             anda #%10111111
+C12F A7A4             (        trace.asm):00017             sta ,y
+C131 3121             (        trace.asm):00018             leay 1,y
+C133 20EF             (        trace.asm):00019             bra @repeat1
+C135                  (        trace.asm):00020         @next
+C135 E684             (        trace.asm):00021             ldb ,x
+C137                  (        trace.asm):00022         @repeat2
+C137 5A               (        trace.asm):00023             decb
+C138 1027000D         (        trace.asm):00024             beq @done
+C13C A6A4             (        trace.asm):00025             lda ,y
+C13E 8A30             (        trace.asm):00026             ora  #%00110000
+C140 84BF             (        trace.asm):00027             anda #%10111111
+C142 A7A4             (        trace.asm):00028             sta ,y
+C144 31A8E0           (        trace.asm):00029             leay -32,y
+C147 20EE             (        trace.asm):00030             bra @repeat2
+C149                  (        trace.asm):00031         @done
+C149 3596             (        trace.asm):00032             puls a,b,x,pc
+                      (        trace.asm):00033         
+C14B                  (        trace.asm):00034         reset_trace
+C14B 3416             (        trace.asm):00035             pshs a,b,x
+C14D 58               (        trace.asm):00036             aslb
+C14E 58               (        trace.asm):00037             aslb
+C14F 3A               (        trace.asm):00038             abx
+C150 10AE81           (        trace.asm):00039             ldy ,x++
+C153 E680             (        trace.asm):00040             ldb ,x+
+C155                  (        trace.asm):00041         @repeat1
+C155 5A               (        trace.asm):00042             decb
+C156 1027000C         (        trace.asm):00043             beq @next
+C15A A6A4             (        trace.asm):00044             lda ,y
+C15C 8A40             (        trace.asm):00045             ora  #%01000000
+C15E 84CF             (        trace.asm):00046             anda #%11001111
+C160 A7A4             (        trace.asm):00047             sta ,y
+C162 3121             (        trace.asm):00048             leay 1,y
+C164 20EF             (        trace.asm):00049             bra @repeat1
+C166                  (        trace.asm):00050         @next
+C166 E684             (        trace.asm):00051             ldb ,x
+C168                  (        trace.asm):00052         @repeat2
+C168 5A               (        trace.asm):00053             decb
+C169 1027000D         (        trace.asm):00054             beq @done
+C16D A6A4             (        trace.asm):00055             lda ,y
+C16F 8A40             (        trace.asm):00056             ora  #%01000000
+C171 84CF             (        trace.asm):00057             anda #%11001111
+C173 A7A4             (        trace.asm):00058             sta ,y
+C175 31A8E0           (        trace.asm):00059             leay -32,y
+C178 20EE             (        trace.asm):00060             bra @repeat2
+C17A                  (        trace.asm):00061         @done
+C17A 3596             (        trace.asm):00062             puls a,b,x,pc
+                      (     kt-f-rom.asm):00182             
+                      (     kt-f-rom.asm):00183         ; Drawing tables: Start address, move right count, move up count
+C17C                  (     kt-f-rom.asm):00184         button_table
+C17C 04CF             (     kt-f-rom.asm):00185             fdb 1231
+C17E 0301             (     kt-f-rom.asm):00186             fcb 3,1
+C180 04AF             (     kt-f-rom.asm):00187             fdb 1199
+C182 0301             (     kt-f-rom.asm):00188             fcb 3,1
+C184 048F             (     kt-f-rom.asm):00189             fdb 1167
+C186 0301             (     kt-f-rom.asm):00190             fcb 3,1
+C188 046F             (     kt-f-rom.asm):00191             fdb 1135
+C18A 0301             (     kt-f-rom.asm):00192             fcb 3,1
+                      (     kt-f-rom.asm):00193             
+C18C                  (     kt-f-rom.asm):00194         pia0a_table
+C18C 04C4             (     kt-f-rom.asm):00195             fdb 1220
+C18E 0401             (     kt-f-rom.asm):00196             fcb 4,1
+C190 04A4             (     kt-f-rom.asm):00197             fdb 1188
+C192 0401             (     kt-f-rom.asm):00198             fcb 4,1
+C194 0484             (     kt-f-rom.asm):00199             fdb 1156
+C196 0401             (     kt-f-rom.asm):00200             fcb 4,1
+C198 0464             (     kt-f-rom.asm):00201             fdb 1124
+C19A 0401             (     kt-f-rom.asm):00202             fcb 4,1
+C19C 0444             (     kt-f-rom.asm):00203             fdb 1092
+C19E 0401             (     kt-f-rom.asm):00204             fcb 4,1
+C1A0 0424             (     kt-f-rom.asm):00205             fdb 1060
+C1A2 0401             (     kt-f-rom.asm):00206             fcb 4,1
+C1A4 0404             (     kt-f-rom.asm):00207             fdb 1028
+C1A6 0401             (     kt-f-rom.asm):00208             fcb 4,1
+C1A8                  (     kt-f-rom.asm):00209         pia0b_table
+C1A8 05E4             (     kt-f-rom.asm):00210             fdb 1508
+C1AA 0B0A             (     kt-f-rom.asm):00211             fcb 11,10
+C1AC 05C4             (     kt-f-rom.asm):00212             fdb 1476
+C1AE 0A09             (     kt-f-rom.asm):00213             fcb 10,9
+C1B0 05A4             (     kt-f-rom.asm):00214             fdb 1444
+C1B2 0908             (     kt-f-rom.asm):00215             fcb 9,8
+C1B4 0584             (     kt-f-rom.asm):00216             fdb 1412
+C1B6 0807             (     kt-f-rom.asm):00217             fcb 8,7
+C1B8 0564             (     kt-f-rom.asm):00218             fdb 1380
+C1BA 0706             (     kt-f-rom.asm):00219             fcb 7,6
+C1BC 0544             (     kt-f-rom.asm):00220             fdb 1348
+C1BE 0605             (     kt-f-rom.asm):00221             fcb 6,5
+C1C0 0524             (     kt-f-rom.asm):00222             fdb 1316
+C1C2 0504             (     kt-f-rom.asm):00223             fcb 5,4
+C1C4 0504             (     kt-f-rom.asm):00224             fdb 1284
+C1C6 0403             (     kt-f-rom.asm):00225             fcb 4,3
+                      (     kt-f-rom.asm):00226         
+C1C8                  (     kt-f-rom.asm):00227         matrix_table
+C1C8 04CE             (     kt-f-rom.asm):00228             fdb 1230
+                      (     kt-f-rom.asm):00229         
+C1CA                  (     kt-f-rom.asm):00230         screen
+C1CA 01368383C3C3C368 (     kt-f-rom.asm):00231                 fcb     $01,$36,$83,$83,$c3,$c3,$c3,$68,$69,$6b,$7f,$61,$62,$63,$64,$80,$80,$80,$80,$80,$80,$80,$80,$64,$7d,$45,$4e,$54,$45,$52,$80,$80
+     696B7F6162636480
+     8080808080808064
+     7D454E5445528080
+C1EA 01358383C3C3C36F (     kt-f-rom.asm):00232                 fcb     $01,$35,$83,$83,$c3,$c3,$c3,$6f,$6e,$6d,$6c,$7b,$7a,$79,$78,$80,$80,$80,$80,$80,$80,$80,$80,$63,$7d,$43,$4c,$45,$41,$52,$80,$80
+     6E6D6C7B7A797880
+     8080808080808063
+     7D434C4541528080
+C20A 01348383C3C3C377 (     kt-f-rom.asm):00233                 fcb     $01,$34,$83,$83,$c3,$c3,$c3,$77,$76,$75,$74,$73,$72,$71,$70,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     7675747372717080
+     8080808080808080
+     8080808080808080
+C22A 01338383C3C3C36A (     kt-f-rom.asm):00234                 fcb     $01,$33,$83,$83,$c3,$c3,$c3,$6a,$7e,$5f,$7c,$5e,$5a,$59,$58,$c3,$c3,$4c,$42,$72,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     7E5F7C5E5A5958C3
+     C34C427280808080
+     8080808080808080
+C24A 01328383C3C3C357 (     kt-f-rom.asm):00235                 fcb     $01,$32,$83,$83,$c3,$c3,$c3,$57,$56,$55,$54,$53,$52,$51,$50,$c3,$c3,$52,$42,$72,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     56555453525150C3
+     C352427280808080
+     8080808080808080
+C26A 01318383C3C3C34F (     kt-f-rom.asm):00236                 fcb     $01,$31,$83,$83,$c3,$c3,$c3,$4f,$4e,$4d,$4c,$4b,$4a,$49,$48,$c3,$c3,$4c,$42,$71,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     4E4D4C4B4A4948C3
+     C34C427180808080
+     8080808080808080
+C28A 01308383C3C3C347 (     kt-f-rom.asm):00237                 fcb     $01,$30,$83,$83,$c3,$c3,$c3,$47,$46,$45,$44,$43,$42,$41,$40,$c3,$c3,$52,$42,$71,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     46454443424140C3
+     C352427180808080
+     8080808080808080
+C2AA 80808080808080C5 (     kt-f-rom.asm):00238                 fcb     $80,$80,$80,$80,$80,$80,$80,$c5,$c5,$c5,$c5,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+     C5C5C5C5C5C5C580
+     8080808080808080
+     8080808080808080
+C2CA 02378383C3C3C3C7 (     kt-f-rom.asm):00239                 fcb     $02,$37,$83,$83,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$62,$7d,$42,$52,$45,$41,$4b,$80,$80
+     C5C5C5C5C5C5C580
+     8080808080808062
+     7D425245414B8080
+C2EA 02368383C3C3C3C3 (     kt-f-rom.asm):00240                 fcb     $02,$36,$83,$83,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$61,$7d,$41,$4c,$54,$80,$80,$80,$80
+     C7C5C5C5C5C5C580
+     8080808080808061
+     7D414C5480808080
+C30A 02358383C3C3C3C3 (     kt-f-rom.asm):00241                 fcb     $02,$35,$83,$83,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$6a,$7d,$53,$50,$41,$43,$45,$80,$80
+     C3C7C5C5C5C5C580
+     808080808080806A
+     7D53504143458080
+C32A 02348383C3C3C3C3 (     kt-f-rom.asm):00242                 fcb     $02,$34,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$7c,$7d,$44,$4f,$57,$4e,$80,$80,$80
+     C3C3C7C5C5C5C580
+     808080808080807C
+     7D444F574E808080
+C34A 02338383C3C3C3C3 (     kt-f-rom.asm):00243                 fcb     $02,$33,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$68,$7d,$53,$48,$49,$46,$54,$80,$80
+     C3C3C3C7C5C5C580
+     8080808080808068
+     7D53484946548080
+C36A 02328383C3C3C3C3 (     kt-f-rom.asm):00244                 fcb     $02,$32,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$69,$7d,$46,$72,$80,$80,$80,$80,$80
+     C3C3C3C3C7C5C580
+     8080808080808069
+     7D46728080808080
+C38A 02318383C3C3C3C3 (     kt-f-rom.asm):00245                 fcb     $02,$31,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$c5,$80,$80,$80,$80,$80,$80,$80,$80,$6b,$7d,$46,$71,$80,$80,$80,$80,$80
+     C3C3C3C3C3C7C580
+     808080808080806B
+     7D46718080808080
+C3AA 02308383C3C3C3C3 (     kt-f-rom.asm):00246                 fcb     $02,$30,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$80,$80,$80,$80,$80,$80,$80,$80,$7f,$7d,$43,$54,$52,$4c,$80,$80,$80
+     C3C3C3C3C3C3C780
+     808080808080807F
+     7D4354524C808080
+                      (     kt-f-rom.asm):00247          
+                      (     kt-f-rom.asm):00248             end start

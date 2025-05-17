@@ -18,6 +18,10 @@ This program rolls out bits on port A, looking for pressed keys by reading port 
 
 This program does nothing until a keyboard interrupt is generated. Then the joystick buttons are check and possible updated. If no joystick buttons were press port B is rolled one bit at a time and port A is read looking for a low bit. If a key press is detected it's symbol is reversed. A count is kept of the number of interrupts generated.
 
+## Raw ROM
+
+This is a ROMable version of the forward keyboard test program.
+
 --
 
 tim lindner

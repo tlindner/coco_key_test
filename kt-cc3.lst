@@ -94,7 +94,7 @@
                       (       kt-cc3.asm):00046             ; reset interrupt
 6026 8600             (       kt-cc3.asm):00047             lda #$00
 6028 B7FF02           (       kt-cc3.asm):00048             sta $ff02
-                      (       kt-cc3.asm):00049             ; display interrupt count
+                      (       kt-cc3.asm):00049             ; convert interrupt count to ascii
 602B FC6002           (       kt-cc3.asm):00050             ldd int_count
 602E 8E6004           (       kt-cc3.asm):00051             ldx #ic_buffer
 6031 BD61E1           (       kt-cc3.asm):00052             jsr BN2DEC
@@ -376,7 +376,7 @@
 61E1 ED01             (  6809_BN2DEC.asm):00025                 STD     1,X                     ; SAVE DATA IN BUFFER
 61E3 102A0005         (  6809_BN2DEC.asm):00026                 BPL     CNVERT          ; BRANCH IF DATA POSITIVE
 61E7 CC0000           (  6809_BN2DEC.asm):00027                 LDD     #0                      ; ELSE TAKE ABSOLUTE VALUE
-61EA A301             (  6809_BN2DEC.asm):00028                 SUBD    1,X
+61EA A301             (  6809_BN2DEC.asm):00028                 SUBD 1,X
                       (  6809_BN2DEC.asm):00029         ;
                       (  6809_BN2DEC.asm):00030         ; INITIALIZE STRING LENGTH TO ZERO
                       (  6809_BN2DEC.asm):00031         ;
