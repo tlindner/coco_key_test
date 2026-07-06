@@ -19,75 +19,93 @@ screen
 	fcb	$02,$30,$83,$83,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3,$c7,$80,$80,$80,$80,$80,$80,$80,$80,$7f,$7d,$43,$54,$52,$4c,$80,$80,$80
  
     org $6000
-outa rmb 1
-inb rmb 1
+outb rmb 1
+ina rmb 1
 input_count rmb 1
 
 start
-* initalize
-    clr $71 ; force cold start on reset
-    ; set up pias backward.
-    ldb $ff01 ; set DDR mode
-    andb #%11111011
-    stb $ff01
-    lda #%01111111 ; make side A (mostly) output
-    sta $ff00
-    orb #%000000100 ; set DR mode
-    stb $ff02
+initialize
+    clr $71         ; Force cold start on reset
     
-    ldb $ff03 ; set DDR mode
-    andb #%11111011
+    ; --- Configure Side A ($FF00/$FF01) as INPUT ---
+    ldb $ff01       ; Get Control Register A
+    andb #%11111011 ; Clear bit 2 to select DDR
+    stb $ff01
+    lda #%00000000  ; Set all pins on Side A to INPUT
+    sta $ff00
+    ldb $ff01
+    orb #%00000100  ; Set bit 2 to select Data Register
+    stb $ff01
+    
+    ; --- Configure Side B ($FF02/$FF03) as OUTPUT ---
+    ldb $ff03       ; Get Control Register B
+    andb #%11111011 ; Clear bit 2 to select DDR
     stb $ff03
-    lda #%00000000 ; make side B input
+    lda #%11111111  ; Set all pins on Side B to OUTPUT
     sta $ff02
-    orb #%000000100 ; set DR mode
+    ldb $ff03
+    orb #%00000100  ; Set bit 2 to select Data Register
     stb $ff03
     
 mainloop
-    lda #%01000000
-    sta outa
+    lda #%01111111  ; Start by pulling row 7 low (or high, depending on your hardware)
+    sta outb
     
 subloop
-    lda #128
+    lda #32
     sta input_count
-    
+
 output_rows
 input_cols
-    lda outa
-    sta $ff00
-    lda $ff02
-    sta inb
+    lda outb
+    sta $ff02       ; Output the row strobe to Side B
+    
+    ; Optional: If you experience ghosting, insert a few NOPs here 
+    ; to let the lines settle before reading.
+    
+    lda $ff00       ; Read the column results from Side A
+    sta ina
+    
+    ; --- Your Debug Display ---
+#     lda ina
+#     jsr BN2HEX
+#     std $400
+#     
+#     lda outb
+#     jsr BN2HEX
+#     std $402
+
 * draw side a
-    lda outa
+    lda ina
     ldx #pia0a_table
     ldb #7
     bsr update_traces
 
 * draw side b
-    lda inb
+    lda outb
     ldx #pia0b_table
     ldb #8
     bsr update_traces
     
 * handle matrix drawing
-;    lda inb
-;    ldb outa
-;    bsr update_matrix
+    lda ina
+    ldb outb
+    bsr update_matrix
     
 * handle repeat    
     dec input_count
     bne output_rows
 
 * handle a side shift   
-    lda outa
-    lsra
-;    ora #%10000000
-    sta outa
-    cmpa #0
+    lda outb
+    orcc #%00000001
+    rora
+    sta outb
+    cmpa #$ff
     beq mainloop
     bra subloop
    
-; highlite button taxt on screen
+; highlite button text on screen
 ; Input: a = value
 ; saved: nothing
 update_button_text
@@ -217,5 +235,6 @@ pia0b_table
 
 matrix_table
     fdb 1230
-    
+
+#  INCLUDE "6809_BN2VDGHEX.asm"    
     end start
